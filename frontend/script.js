@@ -6,6 +6,9 @@ let isDarkTheme = localStorage.getItem('theme') === 'dark';
 let isScanning = false;
 let connectedDevice = null;
 
+// Change this to your deployed backend URL after deployment
+const BACKEND_URL = 'https://your-backend-url.onrender.com/chat'; // <-- UPDATE after backend deploy
+
 // Initialize when document is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize UI elements
@@ -112,7 +115,7 @@ function handleSendMessage() {
     showTypingIndicator();
 
     // Send message to backend
-    fetch('http://localhost:3000/chat', {
+    fetch(BACKEND_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
