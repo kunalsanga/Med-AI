@@ -16,6 +16,8 @@ Med AI is designed for educational and demonstration purposes, showcasing how ad
 ![](https://github.com/kunalsanga/Med-AI/blob/main/smart.png)
 ![](https://github.com/kunalsanga/Med-AI/blob/main/chat.png)
 
+## Deployment Link: https://med-ai-flax.vercel.app/
+
 ## Features
 - **AI Chatbot:** Get medical and general answers powered by Gemini AI.
 - **Rich Chat UI:** Modern, responsive chat interface with Markdown support for AI responses.
