@@ -7,7 +7,7 @@ let isScanning = false;
 let connectedDevice = null;
 
 // Change this to your deployed backend URL after deployment
-const BACKEND_URL = 'https://your-backend-url.onrender.com/chat'; // <-- UPDATE after backend deploy
+const BACKEND_URL = 'https://med-ai-e11m.onrender.com/chat'; // <-- UPDATE after backend deploy
 
 // Initialize when document is ready
 document.addEventListener('DOMContentLoaded', function() {
