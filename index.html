@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <title>MediAI Assistant | Professional Healthcare Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>Med AI</span>
+            </div>
+            <div class="nav-links">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heartbeat"></i> Med AI</h1>
+            <p>Advanced AI-Powered Medical Guidance System</p>
+        </header>
+        <main>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Advanced Diagnostics</h3>
+                    <p>Comprehensive symptom analysis using medical algorithms</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Secure, encrypted health data protection</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Continuous Care</h3>
+                    <p>24/7 Professional medical guidance</p>
+                </div>
+            </div>
+
+            <div class="chat-toggle">
+                <button id="medical-chat" class="active">Professional Consultation</button>
+                <button id="general-chat">General Inquiry</button>
+            </div>
+
+            <div id="chat-mode-indicator">
+                <i class="fas fa-user-md"></i>
+                <span>Medical Consultation Mode</span>
+            </div>
+
+            <div class="device-connection">
+                <div class="device-header">
+                    <h3><i class="fas fa-heartbeat"></i> Connected Devices</h3>
+                    <button id="scan-devices" class="scan-button">
+                        <i class="fas fa-sync-alt"></i>
+                        Scan for Devices
+                    </button>
+                </div>
+                <div class="device-list">
+                    <div class="no-devices">
+                        <i class="fas fa-watch"></i>
+                        <p>No devices connected. Click scan to find nearby devices.</p>
+                    </div>
+                </div>
+                <div class="device-stats hidden">
+                    <div class="stat-card">
+                        <i class="fas fa-heart"></i>
+                        <span class="stat-label">Heart Rate</span>
+                        <span class="stat-value">-- BPM</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-walking"></i>
+                        <span class="stat-label">Steps</span>
+                        <span class="stat-value">-- steps</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bed"></i>
+                        <span class="stat-label">Sleep</span>
+                        <span class="stat-value">-- hrs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-header">
+                    <i class="fas fa-comments"></i>
+                    <h2>Medical Consultation Portal</h2>
+                    <button id="clear-chat" class="clear-button">
+                        <i class="fas fa-trash"></i>
+                        Clear Chat
+                    </button>
+                </div>
+                <div id="chat-messages"></div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Describe your symptoms in detail...">
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Send
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+    <div id="clear-modal" class="modal">
+        <div class="modal-content">
+            <h3>Clear Chat History</h3>
+            <p>Are you sure you want to clear all chat messages? This action cannot be undone.</p>
+            <div class="modal-buttons">
+                <button id="confirm-clear" class="confirm-button">
+                    <i class="fas fa-check"></i>
+                    Confirm
+                </button>
+                <button id="cancel-clear" class="cancel-button">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
