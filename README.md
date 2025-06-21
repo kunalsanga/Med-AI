@@ -1,14 +1,6 @@
-# MedAI
+# MedAI (https://med-ai-flax.vercel.app/)
 
-Med AI is a fullstack AI-powered health consultation chatbot and virtual assistant. It enables users to:
-
-- **Get instant, professional medical guidance:** Ask health-related questions, describe symptoms, and receive AI-generated advice and information, powered by Google's Gemini AI.
-- **Chat about general topics:** Switch to general chat mode for non-medical questions or casual conversation.
-- **Simulate device integration:** The UI allows users to scan for and "connect" to health devices (simulated), displaying mock health stats like heart rate, steps, and sleep.
-- **Enjoy a modern, user-friendly interface:** Features include light/dark theme switching, chat clearing, and Markdown-formatted AI responses for better readability.
-- **Switch between modes:** Easily toggle between Medical Consultation and General Inquiry to tailor the AI's responses to your needs.
-
-Med AI is designed for educational and demonstration purposes, showcasing how advanced AI can assist with health information and general queries in a secure, interactive web environment.
+Med AI is a fullstack AI-powered health consultation chatbot and virtual assistant designed for educational and demonstration purposes. It allows users to receive instant, AI-generated medical guidance using Google's Gemini AI by asking health-related questions or describing symptoms. Users can also switch to a general chat mode for non-medical conversations. The interface includes features like simulated health device integration (displaying mock stats such as heart rate and sleep data), light/dark theme toggling, chat clearing, and Markdown-formatted responses for enhanced readability. With seamless mode switching between medical and general inquiries, Med AI showcases the practical application of advanced AI in a secure, interactive web environment.
 
 ## Preview
 ![](https://github.com/kunalsanga/Med-AI/blob/main/main.png)
