@@ -10,6 +10,12 @@ Med AI is a fullstack AI-powered health consultation chatbot and virtual assista
 
 Med AI is designed for educational and demonstration purposes, showcasing how advanced AI can assist with health information and general queries in a secure, interactive web environment.
 
+## Preview
+![](https://github.com/kunalsanga/Med-AI/blob/main/main.png)
+![](https://github.com/kunalsanga/Med-AI/blob/main/maindark.png)
+![](https://github.com/kunalsanga/Med-AI/blob/main/smart.png)
+![](https://github.com/kunalsanga/Med-AI/blob/main/chat.png)
+
 ## Features
 - **AI Chatbot:** Get medical and general answers powered by Gemini AI.
 - **Rich Chat UI:** Modern, responsive chat interface with Markdown support for AI responses.
