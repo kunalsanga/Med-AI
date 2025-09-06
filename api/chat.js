@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -45,4 +45,4 @@ export default async function handler(req, res) {
     console.error('Error communicating with Gemini API:', error.response?.data || error.message);
     res.status(500).json({ error: 'Failed to get response from AI.' });
   }
-}
+};
