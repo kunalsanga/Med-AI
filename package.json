@@ -1,0 +1,17 @@
+{
+  "name": "medai-app",
+  "version": "1.0.0",
+  "description": "MedAI Health Assistant - Full Stack Application",
+  "main": "api/chat.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Build completed'",
+    "start": "echo 'Starting serverless functions'"
+  },
+  "dependencies": {
+    "axios": "^1.6.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

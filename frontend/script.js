@@ -6,8 +6,10 @@ let isDarkTheme = localStorage.getItem('theme') === 'dark';
 let isScanning = false;
 let connectedDevice = null;
 
-// Change this to your deployed backend URL after deployment
-const BACKEND_URL = 'https://med-ai-e11m.onrender.com/chat'; // <-- UPDATE after backend deploy
+// Backend URL - Auto-detect environment
+// For local development, use localhost; for production, use Vercel API
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const BACKEND_URL = isLocalhost ? 'http://localhost:3000/chat' : '/api/chat';
 
 // Initialize when document is ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -133,8 +135,9 @@ function handleSendMessage() {
     })
     .catch(error => {
         hideTypingIndicator();
-        addMessage('Error contacting the AI backend.', false);
-        console.error('Error:', error);
+        console.error('Detailed Error:', error);
+        console.error('Backend URL:', BACKEND_URL);
+        addMessage(`Error contacting the AI backend. URL: ${BACKEND_URL}`, false);
     });
 }
 

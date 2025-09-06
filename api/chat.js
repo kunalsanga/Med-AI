@@ -1,24 +1,30 @@
-const express = require('express');
-const axios = require('axios');
-const cors = require('cors');
+import axios from 'axios';
 
-const app = express();
-const PORT = 3000;
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyC2qN_TrBQITilmz65a_mkPVo3zZ1871FY';
+export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
-// Add health check endpoint
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', message: 'MedAI Backend is running' });
-});
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
 
-app.use(cors());
-app.use(express.json());
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-app.post('/chat', async (req, res) => {
   const { message } = req.body;
   if (!message) {
     return res.status(400).json({ error: 'Message is required.' });
   }
+
+  const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyC2qN_TrBQITilmz65a_mkPVo3zZ1871FY';
 
   try {
     const response = await axios.post(
@@ -39,8 +45,4 @@ app.post('/chat', async (req, res) => {
     console.error('Error communicating with Gemini API:', error.response?.data || error.message);
     res.status(500).json({ error: 'Failed to get response from AI.' });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-}); 
+}

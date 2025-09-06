@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: medai-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        value: AIzaSyC2qN_TrBQITilmz65a_mkPVo3zZ1871FY
