@@ -124,9 +124,17 @@ function handleSendMessage() {
         },
         body: JSON.stringify({ message }),
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
         hideTypingIndicator();
+        console.log('Response data:', data);
         if (data.response) {
             addMessage(data.response, false);
         } else {
@@ -137,7 +145,7 @@ function handleSendMessage() {
         hideTypingIndicator();
         console.error('Detailed Error:', error);
         console.error('Backend URL:', BACKEND_URL);
-        addMessage(`Error contacting the AI backend. URL: ${BACKEND_URL}`, false);
+        addMessage(`Error contacting the AI backend. URL: ${BACKEND_URL}. Error: ${error.message}`, false);
     });
 }
 
